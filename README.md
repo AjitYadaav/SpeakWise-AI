@@ -1,113 +1,405 @@
 # SpeakWise AI 🎙️
 
-A calm, minimal AI-powered public speaking practice tool. Generate a topic, think
-it through, and speak — in **Off The Cuff** or **Deep Research** mode — then get
-quiet, structured AI feedback on confidence, fluency, grammar, vocabulary, and
-structure.
+Practice speaking. Think faster. Communicate better.
 
-The interface is deliberately spare: a full-screen dark gradient, elegant serif
-topic typography, and just three actions — Start Timer, Start Recording, AI
-Feedback. No wheels, no charts on the landing screen, no gamification. The goal
-is a space that feels like thinking, not a game.
+SpeakWise AI is an AI-powered public speaking platform designed to help users improve communication skills through deliberate practice, instant feedback, and real-world speaking scenarios.
 
-![SpeakWise AI](https://img.shields.io/badge/status-MVP-D4AF6A) ![License](https://img.shields.io/badge/license-MIT-7AAB97)
+Whether you're preparing for interviews, presentations, debates, group discussions, or simply trying to become a more confident speaker, SpeakWise AI provides a structured environment to practice and improve.
 
-## ✨ Features
+---
 
-| Area | What it does |
-|---|---|
-| **Topic Generation** | Click Generate — a soft click sound plays, topics rapidly cycle and ease to a stop, then a gentle reveal chime plays as the final topic scales and fades in |
-| **Two Modes** | **Off The Cuff** (short prep, spontaneous) and **Deep Research** (longer prep window) — each with its own timing |
-| **Category Filter** | A quiet dropdown across 10 categories and 1,900+ topics — no wheel |
-| **Synthesized Sound** | Every sound effect (click, shuffle, reveal, timer start/end) is generated live with the Web Audio API — zero audio files |
-| **Speech Recording** | Browser `MediaRecorder` capture with a minimal live waveform |
-| **Speech-to-Text** | Recorded audio is transcribed via OpenAI Whisper, editable before analysis |
-| **AI Speech Analysis** | Gemini scores 6 dimensions and returns strengths, weaknesses, filler words, and suggestions as structured JSON |
-| **Results** | A quiet, focused results view — score cards, a radar chart, and an improvement plan, no dashboards |
-| **Sessions** | Every session saved to `localStorage` — searchable, deletable, re-analyzable |
-| **HR Interview Mode** | Practice classic interview questions with the same record → transcribe → analyze pipeline |
-| **Debate Mode** | Gemini opens with an argument on one side of a motion; you rebut and get scored |
+## 🚀 Live Features
 
-## 🧱 Tech Stack
+### 🎯 Random Topic Generator
 
-**Frontend:** React 18 · TypeScript · Vite · Tailwind CSS · Framer Motion · Recharts · React Router · Web Audio API
-**Backend:** Node.js · Express
-**AI:** OpenAI Whisper (speech-to-text) · Google Gemini (speech analysis, debate)
-**Storage:** `localStorage` for the MVP (see [Architecture](docs/ARCHITECTURE.md) for how to swap in a real database)
+Generate unique speaking prompts instantly across multiple categories:
 
-## 🎨 Design Direction
+- Communication
+- Psychology
+- Business
+- Science
+- Technology
+- Ethics
+- History
+- Motivation
+- Education
+- Current Affairs
 
-The visual language takes cues from calm, focused speaking-practice tools:
-a full-viewport dark green-black gradient background, an italic serif
-(`Fraunces`) for the topic itself — the only large, high-contrast text on the
-page — and a single warm gold accent used sparingly for focus states. There is
-no persistent chrome beyond a faint top nav; every other page (Sessions, HR
-Interview, Debate, Results) reuses the same restrained surfaces, buttons, and
-typography so the whole app feels like one quiet room, not a suite of screens.
+Topics are presented with smooth animations and audio feedback to create an engaging speaking experience.
 
-## 📁 Project Structure
+---
 
-```
+### 🧠 Off-The-Cuff Mode
+
+Think on your feet.
+
+Users receive a random topic and must immediately begin speaking with little or no preparation time.
+
+Perfect for:
+
+- Extempore speaking
+- Group discussions
+- Communication practice
+- Quick-thinking exercises
+
+---
+
+### 🔍 Deep Research Mode
+
+Take time to prepare before speaking.
+
+Users receive a topic, research it, organize their thoughts, and then deliver a structured response.
+
+Perfect for:
+
+- Presentations
+- Technical explanations
+- Academic speaking
+- Public speaking competitions
+
+---
+
+### 🎤 Speech Recording
+
+Record responses directly from the browser using microphone access.
+
+Features:
+
+- Live recording
+- Audio capture
+- Session tracking
+- Review before analysis
+
+---
+
+### 📝 Speech-to-Text Transcription
+
+Recorded speech is automatically converted into text using AI-powered transcription.
+
+Current implementation:
+
+- Groq Whisper Large V3 Turbo
+
+Benefits:
+
+- Fast transcription
+- High accuracy
+- Supports natural speech patterns
+
+---
+
+### 🤖 AI Speech Analysis
+
+After transcription, Google Gemini analyzes the speech and provides detailed feedback.
+
+Evaluation includes:
+
+- Confidence Score
+- Fluency Score
+- Grammar Score
+- Vocabulary Score
+- Structure Score
+- Overall Performance Score
+
+---
+
+### 📊 Detailed Feedback Report
+
+Receive actionable insights including:
+
+#### Strengths
+
+Highlights what was done well.
+
+Examples:
+
+- Strong introduction
+- Clear structure
+- Good vocabulary usage
+
+#### Areas for Improvement
+
+Identifies weaknesses.
+
+Examples:
+
+- Repetitive phrases
+- Weak conclusion
+- Lack of examples
+
+#### Filler Word Detection
+
+Tracks usage of:
+
+- Um
+- Uh
+- Like
+- You know
+- Basically
+
+and other common fillers.
+
+#### Improvement Suggestions
+
+Provides personalized recommendations for future practice sessions.
+
+---
+
+### 💼 HR Interview Mode
+
+Practice real interview questions.
+
+Examples:
+
+- Tell me about yourself
+- Why should we hire you?
+- What are your strengths and weaknesses?
+- Describe a challenging situation
+
+The system evaluates answers similarly to how recruiters evaluate candidates.
+
+Focus areas:
+
+- Clarity
+- Confidence
+- Communication
+- Structure
+- Relevance
+
+---
+
+### ⚖️ Debate Mode
+
+Practice defending your ideas.
+
+Workflow:
+
+1. AI generates an argument.
+2. User responds with a rebuttal.
+3. AI evaluates the response.
+
+Assessment includes:
+
+- Logical reasoning
+- Persuasiveness
+- Counterarguments
+- Communication quality
+- Debate structure
+
+---
+
+### 💾 Session History
+
+All practice sessions are saved locally.
+
+Users can:
+
+- Review previous attempts
+- Compare performance
+- Re-analyze transcripts
+- Track improvement over time
+
+---
+
+## 🏗️ Tech Stack
+
+### Frontend
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Router
+- Recharts
+- Web Audio API
+
+### Backend
+
+- Node.js
+- Express.js
+
+### AI Services
+
+#### Speech-to-Text
+
+- Groq Whisper Large V3 Turbo
+
+#### Speech Analysis
+
+- Google Gemini
+
+### Storage
+
+- Browser Local Storage (MVP)
+
+---
+
+## 📂 Project Structure
+
+```text
 speakwise-ai/
-├── frontend/               # React + TypeScript + Vite app
+│
+├── frontend/
 │   ├── src/
-│   │   ├── components/     # Shared UI (Navbar, ModeToggle, RecorderPanel, charts, ...)
-│   │   ├── pages/          # Home (topic generation + practice flow), Results, History, HR, Debate
-│   │   ├── data/            # Topic bank, HR questions, debate motions
-│   │   ├── hooks/            # useRecorder, useTimer, useTopicShuffle
-│   │   ├── context/          # AppContext (session history only — no gamification)
-│   │   ├── services/         # api.ts — fetch wrappers for the backend
-│   │   ├── utils/             # storage.ts, sound.ts (Web Audio synthesis)
-│   │   └── types/              # Shared TypeScript types
-│   └── ...config files
-├── backend/                # Node + Express API
-│   ├── routes/              # transcribe.js, analyze.js, debate.js
-│   ├── services/            # whisper.js, gemini.js
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   ├── context/
+│   │   ├── services/
+│   │   ├── data/
+│   │   ├── types/
+│   │   └── utils/
+│   │
+│   └── public/
+│
+├── backend/
+│   ├── routes/
+│   ├── services/
+│   ├── middleware/
 │   └── server.js
-└── docs/                    # This documentation set
+│
+└── docs/
 ```
 
-## 🚀 Quick Start
+---
 
-See [docs/INSTALLATION.md](docs/INSTALLATION.md) for full setup steps. TL;DR:
+## ⚙️ Installation
+
+### Clone Repository
 
 ```bash
-# Backend
-cd backend
-cp .env.example .env   # then fill in OPENAI_API_KEY and GEMINI_API_KEY
-npm install
-npm run dev             # http://localhost:8080
+git clone https://github.com/yourusername/speakwise-ai.git
 
-# Frontend (in a second terminal)
-cd frontend
-cp .env.example .env
-npm install
-npm run dev             # http://localhost:5173
+cd speakwise-ai
 ```
 
-Open http://localhost:5173 — the Vite dev server proxies `/api` calls to the backend automatically.
+### Backend Setup
 
-## 📚 Documentation
+```bash
+cd backend
 
-- [Installation Guide](docs/INSTALLATION.md) — local setup, environment variables, running both servers
-- [Architecture](docs/ARCHITECTURE.md) — system diagram, data flow, and design decisions
-- [API Documentation](docs/API_DOCS.md) — every backend endpoint, request/response shapes
-- [Deployment Guide](docs/DEPLOYMENT.md) — Vercel (frontend) + Render (backend) step-by-step
+npm install
+```
 
-## 🔑 Getting API Keys
+Create `.env`
 
-- **OpenAI (Whisper):** https://platform.openai.com/api-keys
-- **Google Gemini:** https://aistudio.google.com/app/apikey
+```env
+PORT=8080
 
-Both offer usage-based pricing; check current rates before heavy use.
+GROQ_API_KEY=your_groq_api_key
 
-## 🗺️ Roadmap Ideas
+GEMINI_API_KEY=your_gemini_api_key
 
-- Swap `localStorage` for a real database (Postgres/MongoDB) + user accounts
-- Server-side audio storage (S3) so speeches can be replayed later
-- Real-time streaming transcription during recording
-- Peer/coach review mode
+GEMINI_MODEL=gemini-2.5-flash
+```
 
-## 📄 License
+Run backend:
 
-MIT — do whatever you'd like with this, attribution appreciated but not required.
+```bash
+npm run dev
+```
+
+---
+
+### Frontend Setup
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 🔑 API Keys
+
+### Groq
+
+Used for speech transcription.
+
+Get API key:
+
+https://console.groq.com/keys
+
+---
+
+### Google Gemini
+
+Used for speech analysis and debate evaluation.
+
+Get API key:
+
+https://aistudio.google.com/app/apikey
+
+---
+
+## 🌟 Future Roadmap
+
+### Authentication
+
+- User accounts
+- Login / Signup
+- OAuth support
+
+### Cloud Storage
+
+- Save recordings
+- Access from any device
+
+### Analytics Dashboard
+
+- Weekly progress reports
+- Performance trends
+- Communication insights
+
+### AI Coach
+
+- Personalized speaking plans
+- Custom exercises
+- Communication goals
+
+### Real-Time Analysis
+
+- Live transcription
+- Live speaking feedback
+- Real-time filler word detection
+
+### Community Features
+
+- Peer reviews
+- Public challenges
+- Leaderboards
+
+---
+
+## 📈 Why This Project?
+
+Many people struggle with:
+
+- Public speaking
+- Interviews
+- Debates
+- Communication confidence
+
+SpeakWise AI was built to provide an accessible platform where anyone can practice speaking regularly and receive meaningful AI-powered feedback.
+
+The goal is simple:
+
+> Help people become more confident communicators through deliberate practice.
+
+---
+
+## 👨‍💻 Author
+
+### Ajit Yadav
+
+Built with the vision of helping students, professionals, and lifelong learners improve communication skills through technology and AI.
