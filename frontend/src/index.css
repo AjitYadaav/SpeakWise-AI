@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-slate-100 font-body antialiased;
+  min-height: 100vh;
+  /* Full-screen dark gradient — deep near-black green fading to soft charcoal,
+     with a very faint warm glow drifting up from the center-bottom. */
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(212,175,106,0.05), transparent 70%),
+    linear-gradient(180deg, #080B0A 0%, #0D1210 45%, #121816 100%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(212,175,106,0.25);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #242F2C;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #33413D;
+}
+
+/* Quiet glass surface for panels — used sparingly, never as page-filling cards. */
+.surface {
+  @apply rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm;
+}
+
+.text-topic {
+  @apply font-serif font-normal italic text-slate-50;
+  letter-spacing: -0.01em;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-ember-500/90 px-6 py-3 text-sm font-medium text-ink-950 transition-all duration-200 hover:bg-ember-400 active:scale-[0.97] disabled:opacity-40 disabled:pointer-events-none;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-medium text-slate-200 transition-all duration-200 hover:border-white/20 hover:bg-white/[0.06] active:scale-[0.97] disabled:opacity-40 disabled:pointer-events-none;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-400 transition-colors hover:text-slate-100;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-100 placeholder:text-slate-600 outline-none transition-colors focus:border-ember-500/50 focus:ring-1 focus:ring-ember-500/20;
+}
+
+.select-field {
+  @apply appearance-none rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm text-slate-200 outline-none transition-colors hover:border-white/20 focus:border-ember-500/50;
+}
+
+.eyebrow {
+  @apply text-[11px] font-mono uppercase tracking-[0.25em] text-slate-500;
+}
