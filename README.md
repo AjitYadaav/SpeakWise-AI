@@ -5,6 +5,7 @@ AI-Powered Communication Coaching Platform
 SpeakWise AI is a modern communication coaching platform designed to help individuals improve public speaking, interview performance, debate skills, and overall communication confidence through deliberate practice and AI-powered feedback.
 
 The platform combines speech transcription, communication analysis, personalized recommendations, and progress tracking to help users become more effective communicators over time.
+
 ---
 ## Application Preview
 
