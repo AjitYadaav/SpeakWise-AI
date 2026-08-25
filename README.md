@@ -7,6 +7,12 @@ SpeakWise AI is a modern communication coaching platform designed to help indivi
 The platform combines speech transcription, communication analysis, personalized recommendations, and progress tracking to help users become more effective communicators over time.
 
 ---
+
+## 🌐 Live Demo
+
+🔗 **Application:** https://speak-wise-ai-tau.vercel.app/
+
+---
 ## Application Preview
 
 ### Home Screen

@@ -15,7 +15,6 @@ This app deploys as two separate services: the **frontend** (static site) on
    - **Start Command:** `npm start`
    - **Instance Type:** Free or Starter (either works for an MVP)
 5. Under **Environment Variables**, add:
-   - `OPENAI_API_KEY` = your OpenAI key
    - `GEMINI_API_KEY` = your Gemini key
    - `GEMINI_MODEL` = `gemini-1.5-flash` (optional)
    - `CORS_ORIGIN` = your Vercel frontend URL (you can update this after step 2 gives you the URL — use `https://your-app.vercel.app`, comma-separated if you have multiple domains)
